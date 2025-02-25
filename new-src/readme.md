@@ -30,6 +30,7 @@ b. several ^V and other commands.
 Hardware:
 Bluepill(stm32f103)
 stlink clone
+FT232RL(red) for UART comm.(bluepill and pc teraterm).
 
 Software:
 WLS2 (ubuntu)
