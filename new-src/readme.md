@@ -34,7 +34,7 @@ FT232RL(red) for UART comm.(bluepill and pc teraterm).
 
 Software:
 WSL2 (ubuntu 22.04.3 LTS (Jammy Jellyfish))
-PlatformIO(mainly pio run -v: PlatformIO Core, version 6.1.17)
+(*sorry make only: PlatformIO(mainly pio run -v: PlatformIO Core, version 6.1.17) is not used. my mistake.*)
 ST Programmer(ST32CubeProgrammer v2.18.0)
 openocd, arm-none-eabi-gdb
 
