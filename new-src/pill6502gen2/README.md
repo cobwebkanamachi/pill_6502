@@ -1,5 +1,5 @@
 # pill_6502 gen2 built on https://github.com/cesanta/stm32-bluepill.
-make clean or make or pio run -v
+make clean or make (*sorry pio run -v was not made : my mistake *)
 obj/firmware.elf is target file to burn into bluepill via st programmer.
 original repository's readme.md is bellow.
 
