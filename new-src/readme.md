@@ -1,4 +1,5 @@
-NEW-SRC made 2025/02/24(pill_6502 is almost original).
+NEW-SRC made 2025/02/24(pill_6502 is almost original).<BR>
+<IMG src="https://github.com/cobwebkanamachi/pill_6502/blob/pio-and-uartbased-mod/new-src/running.jpg">running image</IMG><BR>
 <PRE>
 Newly made uart-based platform from https://github.com/cesanta/stm32-bluepill .
 On top of this, I put pill_6502 assets (main.c, acia6850.c, rom.h, fake6502.c, etc).
