@@ -1,0 +1,376 @@
+Archive member included to satisfy reference by file (symbol)
+
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+                              obj/main.o (memcpy)
+/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+                              obj/main.o (memset)
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 obj/bootstrap.o
+ .bss           0x0000000000000000        0x0 obj/bootstrap.o
+ .text          0x0000000000000000        0x0 obj/main.o
+ .data          0x0000000000000000        0x0 obj/main.o
+ .bss           0x0000000000000000        0x0 obj/main.o
+ .text._sbrk    0x0000000000000000        0x4 obj/main.o
+ .text          0x0000000000000000        0x0 obj/acia6850.o
+ .data          0x0000000000000000        0x0 obj/acia6850.o
+ .bss           0x0000000000000000        0x0 obj/acia6850.o
+ .text          0x0000000000000000        0x0 obj/fake6502.o
+ .data          0x0000000000000000        0x0 obj/fake6502.o
+ .bss           0x0000000000000000        0x0 obj/fake6502.o
+ .text.nmi6502  0x0000000000000000       0x3c obj/fake6502.o
+ .text.irq6502  0x0000000000000000       0x3c obj/fake6502.o
+ .text.exec6502
+                0x0000000000000000       0xc4 obj/fake6502.o
+ .text.hookexternal
+                0x0000000000000000       0x1c obj/fake6502.o
+ .bss.oldstatus
+                0x0000000000000000        0x1 obj/fake6502.o
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x0000000008000000 0x0000000000010000
+ram              0x0000000020000000 0x0000000000010000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD obj/bootstrap.o
+LOAD obj/main.o
+LOAD obj/acia6850.o
+LOAD obj/fake6502.o
+LOAD obj/ROM.o
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
+LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/libgcc.a
+
+.text           0x0000000008000000     0x1640
+ *(.text*)
+ .text          0x0000000008000000       0x58 obj/bootstrap.o
+                0x0000000008000052                _reset
+ .text.read6502
+                0x0000000008000058       0x34 obj/main.o
+                0x0000000008000058                read6502
+ .text.write6502
+                0x000000000800008c       0x24 obj/main.o
+                0x000000000800008c                write6502
+ .text.uart_putc
+                0x00000000080000b0        0xa obj/main.o
+                0x00000000080000b0                uart_putc
+ *fill*         0x00000000080000ba        0x2 
+ .text.process_serial_command
+                0x00000000080000bc       0x64 obj/main.o
+                0x00000000080000bc                process_serial_command
+ .text.startup.main
+                0x0000000008000120      0x104 obj/main.o
+                0x0000000008000120                main
+ .text.process_serial_input_byte
+                0x0000000008000224       0x18 obj/acia6850.o
+                0x0000000008000224                process_serial_input_byte
+ .text.read6850
+                0x000000000800023c       0x30 obj/acia6850.o
+                0x000000000800023c                read6850
+ .text.write6850
+                0x000000000800026c       0x10 obj/acia6850.o
+                0x000000000800026c                write6850
+ .text.imp      0x000000000800027c        0x2 obj/fake6502.o
+ *fill*         0x000000000800027e        0x2 
+ .text.imm      0x0000000008000280       0x18 obj/fake6502.o
+ .text.clc      0x0000000008000298       0x10 obj/fake6502.o
+ .text.cld      0x00000000080002a8       0x10 obj/fake6502.o
+ .text.cli      0x00000000080002b8       0x10 obj/fake6502.o
+ .text.clv      0x00000000080002c8       0x10 obj/fake6502.o
+ .text.jmp      0x00000000080002d8       0x14 obj/fake6502.o
+ .text.nop      0x00000000080002ec       0x30 obj/fake6502.o
+ .text.sec      0x000000000800031c       0x10 obj/fake6502.o
+ .text.sed      0x000000000800032c       0x10 obj/fake6502.o
+ .text.sei      0x000000000800033c       0x10 obj/fake6502.o
+ .text.txs      0x000000000800034c       0x14 obj/fake6502.o
+ .text.zpy      0x0000000008000360       0x28 obj/fake6502.o
+ .text.ind      0x0000000008000388       0x4c obj/fake6502.o
+ .text.absx     0x00000000080003d4       0x54 obj/fake6502.o
+ .text.absy     0x0000000008000428       0x54 obj/fake6502.o
+ .text.zpx      0x000000000800047c       0x28 obj/fake6502.o
+ .text.indy     0x00000000080004a4       0x58 obj/fake6502.o
+ .text.rel      0x00000000080004fc       0x28 obj/fake6502.o
+ .text.abso     0x0000000008000524       0x30 obj/fake6502.o
+ .text.zp       0x0000000008000554       0x1c obj/fake6502.o
+ .text.indx     0x0000000008000570       0x3c obj/fake6502.o
+ .text.bcc.part.0
+                0x00000000080005ac       0x10 obj/fake6502.o
+ .text.bcc      0x00000000080005bc       0x44 obj/fake6502.o
+ .text.bcs      0x0000000008000600       0x44 obj/fake6502.o
+ .text.beq      0x0000000008000644       0x44 obj/fake6502.o
+ .text.bmi      0x0000000008000688       0x48 obj/fake6502.o
+ .text.bne      0x00000000080006d0       0x44 obj/fake6502.o
+ .text.bpl      0x0000000008000714       0x48 obj/fake6502.o
+ .text.bvc      0x000000000800075c       0x44 obj/fake6502.o
+ .text.bvs      0x00000000080007a0       0x44 obj/fake6502.o
+ .text.dex.part.0
+                0x00000000080007e4       0x10 obj/fake6502.o
+ .text.dex      0x00000000080007f4       0x34 obj/fake6502.o
+ .text.dey      0x0000000008000828       0x34 obj/fake6502.o
+ .text.inx      0x000000000800085c       0x34 obj/fake6502.o
+ .text.iny      0x0000000008000890       0x34 obj/fake6502.o
+ .text.tax      0x00000000080008c4       0x38 obj/fake6502.o
+ .text.tay      0x00000000080008fc       0x38 obj/fake6502.o
+ .text.tsx      0x0000000008000934       0x38 obj/fake6502.o
+ .text.txa      0x000000000800096c       0x38 obj/fake6502.o
+ .text.tya      0x00000000080009a4       0x38 obj/fake6502.o
+ .text.putvalue
+                0x00000000080009dc       0x34 obj/fake6502.o
+ .text.stx      0x0000000008000a10        0xc obj/fake6502.o
+ .text.sty      0x0000000008000a1c        0xc obj/fake6502.o
+ .text.sta      0x0000000008000a28        0xc obj/fake6502.o
+ .text.sax.part.0
+                0x0000000008000a34       0x10 obj/fake6502.o
+ .text.sax      0x0000000008000a44       0x40 obj/fake6502.o
+ .text.getvalue
+                0x0000000008000a84       0x38 obj/fake6502.o
+ .text.inc      0x0000000008000abc       0x48 obj/fake6502.o
+ .text.sbc      0x0000000008000b04       0x80 obj/fake6502.o
+ .text.cpx      0x0000000008000b84       0x5c obj/fake6502.o
+ .text.dec      0x0000000008000be0       0x48 obj/fake6502.o
+ .text.cmp      0x0000000008000c28       0x68 obj/fake6502.o
+ .text.cpy      0x0000000008000c90       0x5c obj/fake6502.o
+ .text.ror      0x0000000008000cec       0x5c obj/fake6502.o
+ .text.adc      0x0000000008000d48       0x7c obj/fake6502.o
+ .text.lsr      0x0000000008000dc4       0x58 obj/fake6502.o
+ .text.eor      0x0000000008000e1c       0x58 obj/fake6502.o
+ .text.rol      0x0000000008000e74       0x5c obj/fake6502.o
+ .text.bit      0x0000000008000ed0       0x44 obj/fake6502.o
+ .text.and      0x0000000008000f14       0x5c obj/fake6502.o
+ .text.asl      0x0000000008000f70       0x54 obj/fake6502.o
+ .text.ora      0x0000000008000fc4       0x58 obj/fake6502.o
+ .text.isb      0x000000000800101c       0x28 obj/fake6502.o
+ .text.dcp      0x0000000008001044       0x28 obj/fake6502.o
+ .text.ldx      0x000000000800106c       0x50 obj/fake6502.o
+ .text.lda      0x00000000080010bc       0x50 obj/fake6502.o
+ .text.lax      0x000000000800110c        0xe obj/fake6502.o
+ *fill*         0x000000000800111a        0x2 
+ .text.ldy      0x000000000800111c       0x50 obj/fake6502.o
+ .text.rra      0x000000000800116c       0x28 obj/fake6502.o
+ .text.sre      0x0000000008001194       0x28 obj/fake6502.o
+ .text.rla      0x00000000080011bc       0x28 obj/fake6502.o
+ .text.slo      0x00000000080011e4       0x28 obj/fake6502.o
+ .text.acc      0x000000000800120c        0x2 obj/fake6502.o
+ *fill*         0x000000000800120e        0x2 
+ .text.push16   0x0000000008001210       0x30 obj/fake6502.o
+                0x0000000008001210                push16
+ .text.jsr      0x0000000008001240       0x20 obj/fake6502.o
+ .text.push8    0x0000000008001260       0x18 obj/fake6502.o
+                0x0000000008001260                push8
+ .text.pha      0x0000000008001278        0xc obj/fake6502.o
+ .text.php      0x0000000008001284       0x10 obj/fake6502.o
+ .text.brk      0x0000000008001294       0x48 obj/fake6502.o
+ .text.pull16   0x00000000080012dc       0x34 obj/fake6502.o
+                0x00000000080012dc                pull16
+ .text.rts      0x0000000008001310       0x1c obj/fake6502.o
+ .text.pull8    0x000000000800132c       0x18 obj/fake6502.o
+                0x000000000800132c                pull8
+ .text.pla      0x0000000008001344       0x38 obj/fake6502.o
+ .text.rti      0x000000000800137c       0x24 obj/fake6502.o
+ .text.plp      0x00000000080013a0       0x14 obj/fake6502.o
+ .text.reset6502
+                0x00000000080013b4       0x54 obj/fake6502.o
+                0x00000000080013b4                reset6502
+ .text.step6502
+                0x0000000008001408       0xa8 obj/fake6502.o
+                0x0000000008001408                step6502
+ .text          0x00000000080014b0       0xec /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+                0x00000000080014b0                memcpy
+ .text          0x000000000800159c       0xa4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+                0x000000000800159c                memset
+
+.glue_7         0x0000000008001640        0x0
+ .glue_7        0x0000000008001640        0x0 linker stubs
+
+.glue_7t        0x0000000008001640        0x0
+ .glue_7t       0x0000000008001640        0x0 linker stubs
+
+.vfp11_veneer   0x0000000008001640        0x0
+ .vfp11_veneer  0x0000000008001640        0x0 linker stubs
+
+.v4_bx          0x0000000008001640        0x0
+ .v4_bx         0x0000000008001640        0x0 linker stubs
+
+.iplt           0x0000000008001640        0x0
+ .iplt          0x0000000008001640        0x0 obj/bootstrap.o
+
+.rodata         0x0000000008001640     0x4c68
+ *(.rodata*)
+ .rodata.process_serial_command.str1.1
+                0x0000000008001640       0x66 obj/main.o
+ *fill*         0x00000000080016a6        0x2 
+ .rodata.addrtable
+                0x00000000080016a8      0x400 obj/fake6502.o
+ .rodata.optable
+                0x0000000008001aa8      0x400 obj/fake6502.o
+ .rodata.ticktable
+                0x0000000008001ea8      0x400 obj/fake6502.o
+ .rodata        0x00000000080022a8     0x4000 obj/ROM.o
+                0x00000000080022a8                _binary_obj_ROM_o_bin_start
+                0x00000000080062a8                _binary_obj_ROM_o_bin_end
+
+.rel.dyn        0x00000000080062a8        0x0
+ .rel.iplt      0x00000000080062a8        0x0 obj/bootstrap.o
+
+.bss            0x0000000020000000     0x4136
+                0x0000000020000000                _bss_start = .
+ *(.bss SORT_BY_NAME(.bss.*) COMMON)
+ .bss.a         0x0000000020000000        0x1 obj/fake6502.o
+                0x0000000020000000                a
+ .bss.callexternal
+                0x0000000020000001        0x1 obj/fake6502.o
+                0x0000000020000001                callexternal
+ *fill*         0x0000000020000002        0x2 
+ .bss.clockgoal6502
+                0x0000000020000004        0x4 obj/fake6502.o
+                0x0000000020000004                clockgoal6502
+ .bss.clockticks6502
+                0x0000000020000008        0x4 obj/fake6502.o
+                0x0000000020000008                clockticks6502
+ .bss.ea        0x000000002000000c        0x2 obj/fake6502.o
+                0x000000002000000c                ea
+ .bss.input     0x000000002000000e      0x100 obj/acia6850.o
+ *fill*         0x000000002000010e        0x2 
+ .bss.input_index
+                0x0000000020000110        0x4 obj/acia6850.o
+ .bss.input_processed_index
+                0x0000000020000114        0x4 obj/acia6850.o
+ .bss.instructions
+                0x0000000020000118        0x4 obj/fake6502.o
+                0x0000000020000118                instructions
+ .bss.loopexternal
+                0x000000002000011c        0x4 obj/fake6502.o
+                0x000000002000011c                loopexternal
+ .bss.oldpc     0x0000000020000120        0x2 obj/fake6502.o
+                0x0000000020000120                oldpc
+ .bss.opcode    0x0000000020000122        0x1 obj/fake6502.o
+                0x0000000020000122                opcode
+ *fill*         0x0000000020000123        0x1 
+ .bss.paused    0x0000000020000124        0x4 obj/main.o
+ .bss.pc        0x0000000020000128        0x2 obj/fake6502.o
+                0x0000000020000128                pc
+ .bss.penaltyaddr
+                0x000000002000012a        0x1 obj/fake6502.o
+                0x000000002000012a                penaltyaddr
+ .bss.penaltyop
+                0x000000002000012b        0x1 obj/fake6502.o
+                0x000000002000012b                penaltyop
+ .bss.ram       0x000000002000012c     0x4000 obj/main.o
+ .bss.reladdr   0x000000002000412c        0x2 obj/fake6502.o
+                0x000000002000412c                reladdr
+ .bss.result    0x000000002000412e        0x2 obj/fake6502.o
+                0x000000002000412e                result
+ .bss.sp        0x0000000020004130        0x1 obj/fake6502.o
+                0x0000000020004130                sp
+ .bss.status    0x0000000020004131        0x1 obj/fake6502.o
+                0x0000000020004131                status
+ .bss.value     0x0000000020004132        0x2 obj/fake6502.o
+                0x0000000020004132                value
+ .bss.x         0x0000000020004134        0x1 obj/fake6502.o
+                0x0000000020004134                x
+ .bss.y         0x0000000020004135        0x1 obj/fake6502.o
+                0x0000000020004135                y
+                0x0000000020004136                _bss_end = .
+
+.data           0x0000000020004136        0x0 load address 0x00000000080062a8
+                0x0000000020004136                _data_start = .
+ *(.data SORT_BY_NAME(.data.*))
+                0x0000000020004136                _data_end = .
+                0x00000000080062a8                _data_flash_start = LOADADDR (.data)
+OUTPUT(obj/bluepill.elf elf32-littlearm)
+LOAD linker stubs
+
+.igot.plt       0x0000000020004138        0x0 load address 0x00000000080062a8
+ .igot.plt      0x0000000020004138        0x0 obj/bootstrap.o
+
+.ARM.attributes
+                0x0000000000000000       0x29
+ .ARM.attributes
+                0x0000000000000000       0x21 obj/bootstrap.o
+ .ARM.attributes
+                0x0000000000000021       0x2d obj/main.o
+ .ARM.attributes
+                0x000000000000004e       0x2d obj/acia6850.o
+ .ARM.attributes
+                0x000000000000007b       0x2d obj/fake6502.o
+ .ARM.attributes
+                0x00000000000000a8       0x1b /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x00000000000000c3       0x2d /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 obj/main.o
+                                         0x34 (size before relaxing)
+ .comment       0x0000000000000033       0x34 obj/acia6850.o
+ .comment       0x0000000000000033       0x34 obj/fake6502.o
+ .comment       0x0000000000000033       0x34 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+.debug_info     0x0000000000000000     0x1ba6
+ .debug_info    0x0000000000000000      0x63f obj/main.o
+ .debug_info    0x000000000000063f      0x274 obj/acia6850.o
+ .debug_info    0x00000000000008b3     0x1196 obj/fake6502.o
+ .debug_info    0x0000000000001a49       0x26 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .debug_info    0x0000000000001a6f      0x137 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+.debug_abbrev   0x0000000000000000      0x8ac
+ .debug_abbrev  0x0000000000000000      0x2e2 obj/main.o
+ .debug_abbrev  0x00000000000002e2      0x171 obj/acia6850.o
+ .debug_abbrev  0x0000000000000453      0x391 obj/fake6502.o
+ .debug_abbrev  0x00000000000007e4       0x14 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x00000000000007f8       0xb4 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+.debug_loc      0x0000000000000000      0x69e
+ .debug_loc     0x0000000000000000      0x1fc obj/main.o
+ .debug_loc     0x00000000000001fc       0xd1 obj/acia6850.o
+ .debug_loc     0x00000000000002cd      0x1a5 obj/fake6502.o
+ .debug_loc     0x0000000000000472      0x22c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+.debug_aranges  0x0000000000000000      0x3a8
+ .debug_aranges
+                0x0000000000000000       0x48 obj/main.o
+ .debug_aranges
+                0x0000000000000048       0x30 obj/acia6850.o
+ .debug_aranges
+                0x0000000000000078      0x2f0 obj/fake6502.o
+ .debug_aranges
+                0x0000000000000368       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x0000000000000388       0x20 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+.debug_ranges   0x0000000000000000      0x410
+ .debug_ranges  0x0000000000000000       0xf0 obj/main.o
+ .debug_ranges  0x00000000000000f0       0x40 obj/acia6850.o
+ .debug_ranges  0x0000000000000130      0x2e0 obj/fake6502.o
+
+.debug_line     0x0000000000000000     0x2046
+ .debug_line    0x0000000000000000      0x2fe obj/main.o
+ .debug_line    0x00000000000002fe      0x110 obj/acia6850.o
+ .debug_line    0x000000000000040e     0x19b8 obj/fake6502.o
+ .debug_line    0x0000000000001dc6       0xc1 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .debug_line    0x0000000000001e87      0x1bf /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+
+.debug_str      0x0000000000000000      0x61b
+ .debug_str     0x0000000000000000      0x2a5 obj/main.o
+                                        0x317 (size before relaxing)
+ .debug_str     0x00000000000002a5       0x3e obj/acia6850.o
+                                        0x20a (size before relaxing)
+ .debug_str     0x00000000000002e3      0x174 obj/fake6502.o
+                                        0x324 (size before relaxing)
+ .debug_str     0x0000000000000457       0xad /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+ .debug_str     0x0000000000000504      0x117 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+                                        0x1b3 (size before relaxing)
+
+.debug_frame    0x0000000000000000      0x92c
+ .debug_frame   0x0000000000000000       0x88 obj/main.o
+ .debug_frame   0x0000000000000088       0x40 obj/acia6850.o
+ .debug_frame   0x00000000000000c8      0x838 obj/fake6502.o
+ .debug_frame   0x0000000000000900       0x2c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
