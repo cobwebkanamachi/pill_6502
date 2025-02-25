@@ -33,9 +33,9 @@ stlink clone
 FT232RL(red) for UART comm.(bluepill and pc teraterm).
 
 Software:
-WLS2 (ubuntu)
-PlatformIO(mainly pio run -v)
-ST Programmer
+WSL2 (ubuntu 22.04.3 LTS (Jammy Jellyfish))
+PlatformIO(mainly pio run -v: PlatformIO Core, version 6.1.17)
+ST Programmer(ST32CubeProgrammer v2.18.0)
 openocd, arm-none-eabi-gdb
 
 Enjoy!
