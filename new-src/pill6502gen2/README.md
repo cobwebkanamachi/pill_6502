@@ -1,3 +1,8 @@
+# pill_6502 gen2 built on https://github.com/cesanta/stm32-bluepill.
+make clean or make or pio run -v
+obj/firmware.elf is target file to burn into bluepill via st programmer.
+original repository's readme.md is bellow.
+
 # STM32 BluePill controlled by https://vcon.io
 
 This is a baremetal firmware code for a STM32F103C8T6 "BluePill"
